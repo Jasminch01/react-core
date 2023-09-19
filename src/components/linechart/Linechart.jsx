@@ -1,7 +1,6 @@
 import {
-  LineChart as LC,
+  LineChart as LChart,
   Line,
-  ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
@@ -70,16 +69,14 @@ const Linechart = () => {
   ];
 
   return (
-    <div className="w-[80%] mx-auto my-10">
-      <ResponsiveContainer width='100%' height= '100%' >
-        <LC data={studentData}>
+    <div>
+        <LChart data={studentData}  width={800} height={400}>
           <Line dataKey="mathMarks" stroke="green"></Line>
           <Line dataKey="physicsMarks" stroke="violet"></Line>
           <Tooltip></Tooltip>
           <XAxis dataKey="name"></XAxis>
           <YAxis></YAxis>
-        </LC>
-      </ResponsiveContainer>
+        </LChart>
     </div>
   );
 };
